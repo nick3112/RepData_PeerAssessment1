@@ -199,6 +199,7 @@ k &lt;- k[order(k[,3],k[,1]),]   #re-order
 steps&lt;-ifelse(is.na(k$steps),round(k$averageSteps),k$steps)  #get the steps vector filled with mean average steps where there are NAs
 steps &lt;- as.data.frame(steps)         #now fill in the NAs in the k dataset
 k&lt;-data.frame(k[,c(1,3)],steps)</code></pre>
+<p>There are 2,304 day-interval combinations with a NA or missing reference that must be filled.</p>
 <p>Plot the historgam of filled total steps per day. Get the mean and median number of steps each day from the adjusted data</p>
 <pre class="r"><code>l&lt;-aggregate(k$steps, by=list(Category=k$date), FUN=sum)
 hist(l$x)</code></pre>

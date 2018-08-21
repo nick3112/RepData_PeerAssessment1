@@ -2,7 +2,9 @@
 title: "ReproducibleResearchAssignment1"
 author: 'N'
 date: "August 19, 2018"
-output: html_document
+output:
+  html_document: default
+  pdf_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -82,6 +84,8 @@ steps<-ifelse(is.na(k$steps),round(k$averageSteps),k$steps)  #get the steps vect
 steps <- as.data.frame(steps)         #now fill in the NAs in the k dataset
 k<-data.frame(k[,c(1,3)],steps)
 ```
+
+There are `r j` day-interval combinations with a NA or missing reference that must be filled.
 
 Plot the historgam of filled total steps per day.  Get the mean and median number of steps each day from the adjusted data
 
